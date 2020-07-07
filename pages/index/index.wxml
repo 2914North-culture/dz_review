@@ -1,0 +1,102 @@
+<scroll-view class="page-scroll" scroll-y="{{true}}" bindscrolltolower="scrollBottom">
+  <!-- 头部 -->
+  <view class="main-header">
+    <navigator url="/pages/city/city" hover-class="none" class="city mh-in">
+      <text class="city-text">{{currentCity}}</text>
+      <text class="iconfont icon-jiantou city-icon"></text>
+    </navigator>
+    <navigator hover-class="none" class="search mh-in">
+      <text class="iconfont icon-yssousuo1 search-icon"></text>
+      <text class="search-text">输入商户名、地点、找优惠</text>
+    </navigator>
+    <navigator hover-class="none" class="user mh-in">
+      <text class="iconfont icon-yonghu user-icon"></text>
+      <text class="user-text">我的</text>
+    </navigator>
+  </view>
+  <!-- 分类列表 -->
+  <view class="classify-list">
+    <navigator hover-class="none" url="/pages/classify/classify?id=40">
+      <image src="/common/image/index/food.png"/>
+      <text>美食</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/takeout.png"/>
+      <text>外卖</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/game.png"/>
+      <text>休闲娱乐</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/classify/classify?id=45">
+      <image src="/common/image/index/ktv.png"/>
+      <text>KTV</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/attractions.png"/>
+      <text>景点/门票</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/classify/classify?id=41">
+      <image src="/common/image/index/hotel.png"/>
+      <text>酒店</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/move.png"/>
+      <text>电影/演出</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/classify/classify?id=48">
+      <image src="/common/image/index/knead.png"/>
+      <text>足疗/按摩</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/classify/classify?id=49">
+      <image src="/common/image/index/beauty.png"/>
+      <text>丽人/美发</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/shop.png"/>
+      <text>购物/商场</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/home.png" class="affiliated"/>
+      <text>到家服务</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/pet.png" class="affiliated"/>
+      <text>宠物</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/apartment.png" class="affiliated"/>
+      <text>民宿/公寓</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/pac.png" class="affiliated"/>
+      <text>亲子</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="/common/image/index/all.png" class="affiliated"/>
+      <text>全部</text>
+    </navigator>
+  </view>
+  <!-- 今日状态 -->
+  <view class="nowadays">
+    <view class="n-sup">
+      <navigator hover-class="none">
+        <image src="/common/image/index/hotlist.png" class="hotlist"/>
+        <text>美食热榜</text>
+      </navigator>
+      <navigator hover-class="none">
+        <image src="/common/image/index/dayeat.png" class="dayeat"/>
+        <text>今天吃啥</text>
+      </navigator>
+    </view>
+    <view class="pk-answer"></view>
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class="guess-like">
+    <view class="like-title">猜你喜欢</view>
+    <import src="/template/goodsHome/goodsHome.wxml"/>
+    <template is="goods" data="{{forList:goodsLike}}"/>
+    <view class="requesting" wx:if="{{isRequesting}}">正在请求数据...</view>
+    <view class="on-earth" wx:if="{{isLoadAll}}">刷到底了哟，从头再来吧~</view>
+  </view>
+</scroll-view>

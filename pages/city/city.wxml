@@ -1,0 +1,47 @@
+<scroll-view class="page-scroll" scroll-y="{{true}}" scroll-into-view="{{scrollCityId}}">
+	<view class="city-choose-inbox">
+		<view class="gps-address">
+			<view class="gps-address-inbox">
+				<text class="gps-city" data-name="{{currentCity}}" bindtap="toCurrentCity">{{currentCity}}</text>
+				<text class="gps-symbol">GPS定位</text>
+			</view>
+		</view>
+		<view class="city-sidebar">
+			<view class="city-sidebar-inbox" bindtouchstart="clickToCity" catchtouchmove="moveToCity">
+				<view id="hot" class="city-sidebar-hot fastCheck" data-type="fastCheck">热门</view>
+				<view class="city-sidebar-all" wx:for="{{cityData}}">
+					<view id="{{item.letter}}" class="city-sidebar-list fastCheck" data-type="fastCheck">{{item.letter}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="city-content">
+			<view class="hot-city city-original">
+				<view id="scroll-city-hot" class="city-out-box"></view>
+				<view class="hot-city-title">热门城市</view>
+				<view class="hot-city-all">
+					<view class="hot-city-list" data-name="上海" bindtap="toCurrentCity">上海</view>
+					<view class="hot-city-list" data-name="北京" bindtap="toCurrentCity">北京</view>
+					<view class="hot-city-list" data-name="广州" bindtap="toCurrentCity">广州</view>
+					<view class="hot-city-list" data-name="深圳" bindtap="toCurrentCity">深圳</view>
+					<view class="hot-city-list" data-name="天津" bindtap="toCurrentCity">天津</view>
+					<view class="hot-city-list" data-name="杭州" bindtap="toCurrentCity">杭州</view>
+					<view class="hot-city-list" data-name="南京" bindtap="toCurrentCity">南京</view>
+					<view class="hot-city-list" data-name="苏州" bindtap="toCurrentCity">苏州</view>
+					<view class="hot-city-list" data-name="成都" bindtap="toCurrentCity">成都</view>
+					<view class="hot-city-list" data-name="武汉" bindtap="toCurrentCity">武汉</view>
+					<view class="hot-city-list" data-name="重庆" bindtap="toCurrentCity">重庆</view>
+					<view class="hot-city-list" data-name="西安" bindtap="toCurrentCity">西安</view>
+				</view>
+			</view>
+			<view class="city-classify" wx:for="{{cityData}}" wx:key="letter">
+				<view class="city-classify-list city-original">
+					<view id="scroll-city-{{item.letter}}" class="city-out-box"></view>
+					<view class="city-letter">{{item.letter}}</view>
+					<view class="city-letter-all" wx:for="{{item.citys}}" wx:key="index">
+						<view data-name="{{item}}" class="city-letter-list" bindtap="toCurrentCity">{{item}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

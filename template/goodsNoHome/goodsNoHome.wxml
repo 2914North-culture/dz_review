@@ -1,0 +1,35 @@
+<template name="goodsNoHome">
+	<navigator hover-class="none" class="ct-nohome-list">
+		<image src="{{listDo.image_path ? 'https://data.miaov.com'+listDo.image_path : ''}}" class="ct-nohome-image"></image>
+		<view class="ct-goods-msg ct-nohome-msg">
+			<view class="ct-nohome-title ct-nohome-line">
+				{{listDo.title}}
+			</view>
+			<view class="ct-nohome-state ct-nohome-line">
+				<view class="ct-state-star">
+					<view class="ct-state-disstar" style="{{'width:' + listDo.score + '%'}}"></view>
+				</view>
+				<text class="ct-info-all">{{listDo.view}}条</text>
+				<text class="ct-unit-price">¥{{listDo.price}}/人</text>
+			</view>
+			<view class="ct-nohome-score ct-nohome-line">
+				<view class="ct-score-classify" wx:if="{{listDo.taste}}">
+					口味：
+					<text class="ct-scored">7.8</text>
+				</view>
+				<view class="ct-score-classify">
+					环境：
+					<text class="ct-scored">{{listDo.environment}}</text>
+				</view>
+				<view class="ct-score-classify">
+					服务：
+					<text class="ct-scored">{{listDo.service}}</text>
+				</view>
+			</view>
+			<view class="ct-nohome-todo ct-nohome-line">
+				<text class="ct-todo-place">{{listDo.place}}</text>
+				<text class="ct-todo-classify">{{listDo.classify}}</text>
+			</view>
+		</view>
+	</navigator>
+</template>

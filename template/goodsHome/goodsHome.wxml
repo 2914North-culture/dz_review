@@ -1,0 +1,23 @@
+<template name="goods">
+  <navigator url="/pages/storeDetails/storeDetails?id={{item.id}}"  hover-class="none" class="ct-goods-list" wx:for="{{forList}}" wx:key="id">
+      <image src="{{item.image_path?'https://data.miaov.com'+item.image_path : ''}}" class="ct-goods-image"></image>
+      <view class="ct-goods-msg">
+        <view class="ct-list-title">
+          <text class="ct-shop-name">{{item.title}}</text>
+          <view class="ct-shop-distance">
+            <!-- <text class="iconfont icon-xiaoyuhao ct-distance-icon" wx:if="{{item.distance < 1000}}">1000m</text>
+            <text class="ct-distance-text" wx:if="{{item.distance >= 1000}}">{{item.distance}}m</text> -->
+            <text class="ct-distance-text">{{item.distance}}m</text>
+          </view>
+        </view>
+        <view class="ct-discounts">{{item.label}}</view>
+        <view class="ct-price">
+          <view class="ct-price-left">
+            ¥<text class="ct-present-price">{{item.price}}</text>
+            <text class="ct-original-price">{{}}</text>
+          </view>
+          <text class="ct-sold">已售{{item.view}}</text>
+        </view>
+      </view>
+  </navigator>
+</template>

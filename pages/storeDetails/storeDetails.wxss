@@ -1,0 +1,274 @@
+@import '/common/font/iconfont.wxss';
+@import '/template/goodsNoHome/goodsNoHome.wxss';
+
+.page-scroll{
+  width:100%;
+  height:100%;
+  background-color: #f6f6f6;
+}
+.page-scroll .details-inbox{
+  width:100%;
+  padding-bottom:100rpx;
+  position:relative;
+  z-index:5;
+}
+.details-arrow{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%) rotate(-90deg);
+  color:#909090;
+}
+/* 详情页头部样式 */
+.store-msg{
+  background-color: #fff;
+  padding:0 29rpx;
+}
+.store-msg .details-facade{
+  padding:19rpx 0;
+}
+.store-msg .details-features{
+  border-top: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
+  padding:14rpx 0;
+  color:#909090;
+  font-size:24rpx;
+}
+.store-msg .details-features .business{
+  width:100%;
+}
+.store-msg .details-features .details-features-sub{
+  display:flex;
+  align-items:center;
+  position:relative;
+  margin-top:8rpx;
+}
+.store-msg .details-features .features-item{
+  margin-right:28rpx;
+  display:flex;
+  align-items:baseline;
+}
+.store-msg .details-features .features-icon{
+  font-size:28rpx;
+}
+.store-msg .details-features .features-text{
+  color:#000;
+  margin-left:8rpx;
+}
+.store-msg .details-address{
+  display:flex;
+  align-items:center;
+  padding:33rpx 0;
+}
+.store-msg .details-address .address-left{
+  display:flex;
+  flex-grow:1;
+}
+.store-msg .details-address .address-left .pos-icon{
+  color:#909090;
+  font-size:28rpx;
+}
+.store-msg .details-address .address-left .address-msg{
+  width:100%;
+}
+.store-msg .details-address .address-left .address-msg .address-msg-list{
+  font-size:29rpx;
+}
+.store-msg .details-address .address-left .address-msg .address-guide{
+  color:#949494;
+  font-size:23rpx;
+}
+.store-msg .details-address .address-left .address-msg .location-auth{
+  position:fixed;
+  left:0;
+  bottom:100rpx;
+  height:100rpx;
+  background-color:#fff;
+  margin:0;
+  padding:0;
+  line-height:100rpx;
+  width:100%;
+  font-size:29rpx;
+  color:#9e9e9e;
+  font-weight:500;
+}
+.store-msg .details-address .address-right{
+  width:99rpx;
+  height:60rpx;
+  border-left:solid 2rpx #e1e1e1;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.store-msg .details-address .address-right .contact-icon{
+  color:#ff6633;
+  font-size:37rpx;
+}
+
+/* 详情页榜单部分 */
+.details-ranking{
+  height:110rpx;
+  padding:0 29rpx;
+  margin:20rpx 0;
+  background-color:#fff;
+}
+.details-ranking .ranking-inbox{
+  display:flex;
+  align-items:center;
+  height:100%;
+  position:relative;
+}
+.details-ranking .ranking-inbox .ranking-icon{
+  color:#d5b37f;
+  font-size:41rpx;
+}
+.details-ranking .ranking-inbox .ranking-results{
+  font-size:28rpx;
+  display:flex;
+  align-items:center;
+}
+.details-ranking .ranking-inbox .ranking-results .results-num{
+  color:#ff551c;
+  font-family:'华文楷体';
+}
+.details-ranking .ranking-inbox .ranking-text-out{
+  margin: 0 32rpx 0 28rpx;
+  position:relative;
+  display:flex;
+  align-items:center;
+  font-size:28rpx;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sup{
+  align-self: flex-start;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sub{
+  align-self:flex-end;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sup,.angle-sub{
+  width:11rpx;
+  height:21rpx;
+  background-color:#000;
+  position:relative;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sup::after,.angle-sub::after{
+  content: "";
+  display:block;
+  width:8rpx;
+  height:18rpx;
+  background-color: #fff;
+  position:absolute;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sup::after{
+  right:0;
+  bottom:0;
+}
+.details-ranking .ranking-inbox .ranking-text-out .angle-sub::after{
+  left:0;
+  top:0;
+}
+/* 团购 */
+.bulk{
+  background-color:#fff;
+  padding:0 29rpx;
+}
+.bulk .bulk-inbox{
+  display:flex;
+}
+.bulk .bulk-inbox .bulk-symbol{
+  width:58rpx;
+  position:relative;
+}
+.bulk .bulk-inbox .bulk-symbol .bulk-icon{
+  font-size:40rpx;
+  color:#d5b37f;
+  position:absolute;
+  top:17rpx;
+}
+.bulk .bulk-inbox .bulk-list-all{
+  flex-grow:1;
+}
+.bulk .bulk-inbox .bulk-list-do{
+  width:100%;
+  height:154rpx;
+  border-bottom:solid 2rpx #e6e6e6;
+  display:flex;
+  align-items:center;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-image{
+  width:120rpx;
+  height:120rpx;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg{
+  flex-grow:1;
+  padding-left:20rpx;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-package{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-package .bulk-package-name{
+  font-size:28rpx;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-package .bulk-package-sold{
+  font-size:23rpx;
+  color: #818181;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-price{
+  display:flex;
+  align-items:center;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-price .bulk-present-price{
+  font-size:30rpx;
+  color:#ff5922;
+  margin-right:14rpx;
+}
+.bulk .bulk-inbox .bulk-list-do .bulk-list-msg .bulk-price  .bulk-original-price{
+  font-size:20rpx;
+  color:#888888;
+  text-decoration:line-through;
+}
+.bulk .bulk-inbox .bulk-list-all .bulk-other{
+  height:80rpx;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+.bulk .bulk-inbox .bulk-list-all .bulk-other .bulk-other-inbox .bulk-other-text{
+  font-size:25rpx;
+}
+.bulk .bulk-inbox .bulk-list-all .bulk-other .bulk-other-inbox .bulk-other-icon{
+  font-size:25rpx;
+  color:#b0b0b0;
+}
+/* 商品详情页底部nav */
+.details-nav{
+  position:fixed;
+  z-index:10;
+  width:100%;
+  height:100rpx;
+  left:0;
+  bottom:0;
+  background-color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+.details-nav .details-nav-inbox{
+  width:100%;
+  display:flex;
+}
+.details-nav .details-nav-inbox .details-nav-collection,.details-nav-review{
+  flex-grow:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.details-nav .details-nav-inbox .details-nav-collection .nav-icon,.details-nav-review .nav-icon{
+  font-size:44rpx;
+  color:#626262;
+}
+.details-nav .details-nav-inbox .details-nav-collection .nav-text,.details-nav-review .nav-text{
+  font-size:29rpx;
+  color:#9e9e9e;
+}

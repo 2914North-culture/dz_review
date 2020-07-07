@@ -1,0 +1,108 @@
+<scroll-view class="page-scroll" scroll-y="{{true}}">
+	<view class="details-inbox">
+		<view class="store-msg">
+			<view class="details-facade">
+				<import src="/template/goodsNoHome/goodsNoHome.wxml" />
+				<template is="goodsNoHome" data="{{listDo:storeInfo}}" />
+			</view>
+			<view class="details-features">
+				<view class="business features-item">
+					<text class="iconfont icon-shijian1 features-icon"></text>
+					<text class="features-text">{{storeInfo.shopHours}}</text>
+				</view>
+				<view class="details-features-sub">
+					<view class="wifi features-item" wx:if="{{storeInfo.hasWifi}}">
+						<text class="iconfont icon-wifi features-icon"></text>
+						<text class="features-text">WIFI</text>
+					</view>
+					<view class="park features-item" wx:if="{{storeInfo.hasPark}}">
+						<text class="iconfont icon-che_o features-icon"></text>
+						<text class="features-text">停车场</text>
+					</view>
+					<view class="box features-item" wx:if="{{storeInfo.hasBox}}">
+						<text class="iconfont icon-baoxiang features-icon"></text>
+						<text class="features-text">包厢</text>
+					</view>
+					<view class="baby-chair features-item" wx:if="{{storeInfo.hasBabyChair}}">
+						<text class="iconfont icon-yizi features-icon"></text>
+						<text class="features-text">boby椅</text>
+					</view>
+					<view class="sofa features-item" wx:if="{{storeInfo.hasSofa}}">
+						<text class="iconfont icon-tubiaoCSban- features-icon"></text>
+						<text class="features-text">沙发</text>
+					</view>
+					<text class="iconfont icon-jiantou details-arrow"></text>
+				</view>
+			</view>
+			<view class="details-address">
+				<view class="address-left">
+					<view class="iconfont icon-dingwei pos-icon"></view>
+					<view class="address-msg">
+						<view class="address-msg-list">{{storeInfo.specific}}</view>
+						<view class="address-msg-list">地铁十三号线西二旗A口西500米</view>
+						<view wx:if="{{hasLocationAuth}}" class="address-msg-list address-guide">距您步行{{distance}}m,需要{{time}}</view>
+						<button wx:else open-type="openSetting" class="location-auth">位置授权</button>
+					</view>
+				</view>
+				<view class="address-right">
+					<text class="iconfont icon-dianhua contact-icon"></text>
+				</view>
+			</view>
+		</view>
+		<view class="details-ranking">
+			<view class="ranking-inbox">
+				<text class="iconfont icon-paihangbang ranking-icon ranking-item"></text>
+				<view class="ranking-text-out ranking-item">
+					<view class="angle-sup"></view>
+					<text>上地小吃快餐热门榜</text>
+					<view class="angle-sub"></view>
+				</view>
+				<view class="ranking-results ranking-item">
+					第<text class="results-num">1</text>名
+				</view>
+				<text class="iconfont icon-jiantou details-arrow"></text>
+			</view>
+		</view>
+		<view class="bulk">
+			<view class="bulk-inbox">
+				<view class="bulk-symbol">
+					<text class="iconfont icon-huabanfuben bulk-icon"></text>
+				</view>
+				<view class="bulk-list-all">
+					<view class="bulk-list-do" wx:for="{{2}}">
+						<image src="/common/image/details/bulk-list.png" class="bulk-list-image"></image>
+						<view class="bulk-list-msg">
+							<view class="bulk-package">
+								<text class="bulk-package-name">单人商务套餐，提供免费WiFi</text>
+								<text class="bulk-package-sold">已售28</text>
+							</view>
+							<view class="bulk-price">
+								<text class="bulk-present-price">¥35</text>
+								<text class="bulk-original-price">¥57</text>
+							</view>
+						</view>
+					</view>
+					<view class="bulk-other" catchtap="bulkShow">
+						<view class="bulk-other-inbox">
+							<text class="bulk-other-text">查看其他4个团购</text>
+							<text class="iconfont icon-jiantou bulk-other-icon"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="details-nav">
+		<view class="details-nav-inbox">
+			<view class="details-nav-collection">
+				<text class="iconfont icon-shoucang nav-icon"></text>
+				<text class="nav-text">收藏</text>
+			</view>
+			<view class="details-nav-review">
+				<text class="iconfont icon-pinglun1 nav-icon"></text>
+				<text class="nav-text">写点评</text>
+			</view>
+		</view>
+	</view>
+	<!-- <view style="background-color:#000;height:1000rpx;"></view> -->
+</scroll-view>

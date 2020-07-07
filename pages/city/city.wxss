@@ -1,0 +1,137 @@
+@import '/common/font/iconfont.wxss';
+
+.page-scroll{
+  width:100%;
+  height:100%;
+}
+
+/* GPS定位 */
+.city-choose-inbox{
+  box-sizing:border-box;
+  margin-top:94rpx;
+  width:100%;
+  background-color:#f0f0f0;
+}
+.city-choose-inbox .gps-address{
+  position:fixed;
+  z-index:52;
+  top:0;
+  left:0;
+  width:100%;
+  height:94rpx;
+  display:flex;
+  align-items:center;
+  padding-left:29rpx;
+  box-sizing:border-box;
+  background-color:#fff;
+}
+.city-choose-inbox .gps-address .gps-address-inbox{
+  display:flex;
+  align-items:baseline;
+}
+.city-choose-inbox .gps-address .gps-address-inbox .gps-city{
+  font-size:25rpx;
+  color:#000;
+  margin-right:16rpx;
+}
+.city-choose-inbox .gps-address .gps-address-inbox .gps-symbol{
+  font-size:20rpx;
+  color:#bfbfbf;
+}
+/* 城市列表侧边栏 */
+.city-choose-inbox .city-sidebar{
+  position:fixed;
+  z-index:28;
+  width:70rpx;
+  height:100%;
+  top:0;
+  right:0;
+  display:flex;
+  align-items:center;
+}
+.city-choose-inbox .city-sidebar .city-sidebar-inbox{
+  width:100%;
+  /* background-color:pink; */
+}
+.city-choose-inbox .city-sidebar .city-sidebar-inbox .city-sidebar-hot{
+  font-size:18rpx;
+  color:#5d738b;
+  height:38rpx;
+  text-align:center;
+  line-height:38rpx;
+}
+.city-choose-inbox .city-sidebar .city-sidebar-inbox .city-sidebar-all .city-sidebar-list{
+  height:38rpx;
+  font-size:13rpx;
+  color:#5d738b;
+  text-align:center;
+  line-height:38rpx;
+}
+
+
+/* 城市列表滚动内容 */
+.city-choose-inbox .city-content{
+  width:100%;
+}
+.city-choose-inbox .city-content .city-original{
+  position:relative;
+}
+.city-choose-inbox .city-content .city-out-box{
+  position:absolute;
+  z-index:-1;
+  top:-94rpx;
+  left:0;
+  width:100%;
+  height:94rpx;
+}
+.city-choose-inbox .city-content .hot-city{
+  height:390rpx;
+  padding:0 70rpx 0 29rpx;
+}
+.city-choose-inbox .city-content .hot-city .hot-city-title{
+  font-size:26rpx;
+  color:#9b9b9b;
+  height:70rpx;
+  display:flex;
+  align-items:center;
+}
+.city-choose-inbox .city-content .hot-city .hot-city-all{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-content:space-between;
+  height:320rpx;
+}
+.city-choose-inbox .city-content .hot-city .hot-city-all .hot-city-list{
+  width:212rpx;
+  height:74rpx;
+  border:solid 2rpx #e0e0e0;
+  background-color:#fff;
+  box-sizing:border-box;
+  font-size:25rpx;
+  text-align:center;
+  line-height:74rpx;
+}
+/* 城市首字母分类 */
+.city-choose-inbox .city-content .city-classify .city-classify-list .city-letter{
+  width:100%;
+  height:70rpx;
+  font-size:20rpx;
+  color:#9c9c9c;
+  display:flex;
+  align-items:center;
+  padding-left:29rpx;
+}
+.city-choose-inbox .city-content .city-classify .city-classify-list .city-letter-all{
+  background-color:#fff;
+  padding:0 70rpx 0 29rpx;
+}
+.city-choose-inbox .city-content .city-classify .city-classify-list .city-letter-all .city-letter-list{
+  width:100%;
+  height:92rpx;
+  display:flex;
+  align-items:center;
+  font-size:24rpx;
+  color:#000;
+  border-bottom:solid 2rpx #dedede;
+}

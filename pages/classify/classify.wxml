@@ -1,0 +1,50 @@
+<wxs module="dealNavValue">
+  module.exports = function(str){
+    var val = '';
+    if(str === 'distance') val = '距离';
+    if(str === 'score') val = '评分';
+    if(str === '500' || str === '1000' || str === '2000') val = str + 'm';
+    if(str === '2' || str === '4' || str === '6' || str === '8' || str ==='10') val = str + '分以内';
+    return val;
+  }
+</wxs>
+
+<view class="classify-nav">
+	<view class="classify-nav-menu">
+		<view class="classify-nav-scope menu-item" bindtap="chooseCondition" data-type="{{scopeFor}}">
+			<text class="scope-text">{{dealNavValue(scopeNavValue)}}</text>
+			<text class="iconfont icon-jiantou scope-icon"></text>
+		</view>
+		<view class="classify-nav-divide"></view>
+		<view class="classify-nav-condition menu-item" bindtap="chooseCondition" data-type="condition">
+			<text class="scope-text">{{dealNavValue(conditionNavValue)}}</text>
+			<text class="iconfont icon-jiantou scope-icon"></text>
+		</view>
+	</view>
+  <view class="classify-nav-content">
+    <view class="distance-options content-item" wx:if="{{showOther === 'distance'}}" bindtap="onTapValue" data-type="scope">
+      <view data-value="500" class="{{scopeNavValue == '500' ? 'font-active' : ''}}">500m</view>
+      <view data-value="1000" class="{{scopeNavValue == '1000' ? 'font-active' : ''}}">1000m</view>
+      <view data-value="2000" class="{{scopeNavValue == '2000' ? 'font-active' : ''}}">2000m</view>
+    </view>
+    <view class="score-options content-item" wx:if="{{showOther === 'score'}}" bindtap="onTapValue" data-type="scope">
+      <view data-value="2" class="{{scopeNavValue == '2' ? 'font-active' : ''}}">2分以内</view>
+      <view data-value="4" class="{{scopeNavValue == '4' ? 'font-active' : ''}}">4分以内</view>
+      <view data-value="6" class="{{scopeNavValue == '6' ? 'font-active' : ''}}">6分以内</view>
+      <view data-value="8" class="{{scopeNavValue == '8' ? 'font-active' : ''}}">8分以内</view>
+      <view data-value="10" class="{{scopeNavValue == '10' ? 'font-active' : ''}}">10分以内</view>
+    </view>
+    <view class="condition-options content-item" wx:if="{{showOther === 'condition'}}" bindtap="onTapValue" data-type="condition">
+      <view data-value="distance" class="{{conditionNavValue == 'distance' ? 'font-active' : ''}}">根据距离排序</view>
+      <view data-value="score" class="{{conditionNavValue == 'score' ? 'font-active' : ''}}">根据评分排序</view>
+    </view>
+  </view>
+</view>
+<view class="classify-list-all">
+  <scroll-view class="page-scroll" scroll-y="{{true}}" bindscrolltolower="scrollBottom">
+    <import src="/template/goodsHome/goodsHome.wxml"/>
+    <template is="goods" data="{{forList:classifyData}}"></template>
+    <view wx:if="{{isRequesting}}">正在请求数据...</view>
+    <view wx:if="{{isLoadAll}}">刷到底了哟，从头再来吧~</view>
+  </scroll-view>
+</view>
